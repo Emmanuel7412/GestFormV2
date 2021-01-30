@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GestForm.BusinessController\GestForm.Business.csproj" />
+    <ProjectReference Include="..\GestForm.Business\GestForm.Business.csproj" />
   </ItemGroup>
 
 </Project>

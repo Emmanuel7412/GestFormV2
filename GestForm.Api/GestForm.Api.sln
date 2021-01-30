@@ -8,9 +8,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestForm.Api", "GestForm.Ap
 		{8B85002D-3C00-442A-8B89-4316AC74494A} = {8B85002D-3C00-442A-8B89-4316AC74494A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestForm.Business", "GestForm.BusinessController\GestForm.Business.csproj", "{8B85002D-3C00-442A-8B89-4316AC74494A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestForm.Business", "GestForm.Business\GestForm.Business.csproj", "{8B85002D-3C00-442A-8B89-4316AC74494A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestForm.Business.UnitTests", "GestForm.BusinessController.UnitTests\GestForm.Business.UnitTests.csproj", "{F14ADBF6-EC98-47B9-B284-DB91CFB54016}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestForm.Business.UnitTests", "GestForm.Business.UnitTests\GestForm.Business.UnitTests.csproj", "{F14ADBF6-EC98-47B9-B284-DB91CFB54016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
