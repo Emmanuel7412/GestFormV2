@@ -1,1 +1,47 @@
-<p>check-number works!</p>
+<div>
+  <H1>Calculs sur une liste de nombres</H1>
+
+  <button mat-raised-button color="primary" (click)="openDialog()">
+    Générer une liste
+  </button>
+  <button mat-raised-button color="warn" (click)="removeList()">
+    Supprimer la liste
+  </button>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Liste de nombres</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-chip-list #chipList>
+        <mat-chip
+          color="accent"
+          selected
+          *ngFor="let number of numbers"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(number)"
+          >{{ number }}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Nouveau nombre..."
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="addOnBlur"
+        (matChipInputTokenEnd)="add($event)"
+      />
+    </mat-form-field>
+  </mat-card>
+
+  <div class="result">
+    <button mat-raised-button color="accent" (click)="getResults()">
+      Lancer le calcul
+    </button>
+  </div>
+</div>
