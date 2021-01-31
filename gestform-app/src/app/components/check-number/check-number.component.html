@@ -1,12 +1,27 @@
-<div>
+<div class="numbers-page">
   <H1>Calculs sur une liste de nombres</H1>
 
   <button mat-raised-button color="primary" (click)="openDialog()">
     Générer une liste
   </button>
-  <button mat-raised-button color="warn" (click)="removeList()">
+  <button
+    mat-raised-button
+    color="warn"
+    [disabled]="numbers.length === 0"
+    (click)="removeList()"
+  >
     Supprimer la liste
   </button>
+
+  <button
+    mat-raised-button
+    color="accent"
+    [disabled]="numbers.length === 0"
+    (click)="getResults()"
+  >
+    Lancer le calcul
+  </button>
+
   <mat-divider></mat-divider>
   <mat-card>
     <mat-card-header>
@@ -39,9 +54,21 @@
     </mat-form-field>
   </mat-card>
 
-  <div class="result">
-    <button mat-raised-button color="accent" (click)="getResults()">
-      Lancer le calcul
-    </button>
-  </div>
+  <mat-divider></mat-divider>
+  <mat-card *ngIf="resultsCalc?.length > 0" class="results">
+    <mat-card-header>
+      <mat-card-title>Resultats du calcul</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-chip-list>
+        <mat-chip
+          *ngFor="let res of resultsCalc"
+          [color]="res.result ? 'warn' : 'basic'"
+          selected
+        >
+          {{ res.result ? res.number + " : " + res.result : res.number + "" }}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </mat-card>
 </div>

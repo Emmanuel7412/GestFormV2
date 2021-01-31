@@ -22,9 +22,9 @@ export class NumberService {
     this.endpoint = '/TestGestForm/results';
   }
 
-  getResults(list: number[]): Observable<any> {
+  getResults(list: number[]): Observable<ModuloResult[]> {
     return this.httpClient
-      .post(this.url + this.endpoint, list, {
+      .post<ModuloResult[]>(this.url + this.endpoint, list, {
         headers: this.headers,
       })
       .pipe(

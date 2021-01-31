@@ -40,18 +40,19 @@ export class CheckNumberComponent implements OnInit {
   ngOnInit(): void {}
 
   getResults() {
-    this.numberService
-      .getResults(this.numbers)
-      .subscribe((r) => (this.resultsCalc = r));
-    console.log(this.resultsCalc);
+    this.numberService.getResults(this.numbers).subscribe((r) => {
+      this.resultsCalc = r;
+    });
   }
 
   generateNumbersList() {
     this.numbers = [];
+    this.resultsCalc = [];
     this.numbers = this.getRandomInt(-1000, 1000, 50);
   }
 
   removeList() {
+    this.resultsCalc = [];
     this.numbers = [];
   }
 
@@ -103,6 +104,7 @@ export class CheckNumberComponent implements OnInit {
           result.max,
           result.quantity
         );
+        this.resultsCalc = null;
       }
     });
   }

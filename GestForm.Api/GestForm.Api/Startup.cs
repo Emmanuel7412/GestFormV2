@@ -27,8 +27,15 @@ namespace GestForm.Api
 
             services.AddSwaggerGen(s =>
             {
-                s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "GestForm", Version = "v1" });         
+                s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "GestForm", Version = "v1" });
             });
+            services.AddCors(o => o.AddDefaultPolicy(builder =>
+            {
+                builder
+                .WithOrigins("*", "http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +49,7 @@ namespace GestForm.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
 
             app.UseAuthorization();
 
