@@ -56,7 +56,7 @@ p {
 }
 
 .content {
-  margin: 82px auto 32px;
+  margin: 32px auto 32px;
   padding: 16px 16px;
   max-width: 960px;
   align-items: center;
@@ -80,7 +80,8 @@ svg.material-icons:not(:last-child) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 16px;
+
+  background-color: #b047dd;
 }
 
 .card {
@@ -89,7 +90,7 @@ svg.material-icons:not(:last-child) {
   background-color: #fafafa;
   height: 40px;
   width: 200px;
-  margin: 0 8px 16px;
+  margin: 8px 16px;
   padding: 16px;
   display: flex;
   flex-direction: row;
